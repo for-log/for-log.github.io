@@ -5,7 +5,7 @@ use gloo_net::http::Request;
 use yew::prelude::*;
 use crate::{components::{Accordion, Work}, backend_answers::{AccordionElement, ProjectElement}};
 
-const MAIN_IMAGE: &str = "/static/avatar.webm";
+const MAIN_IMAGE: &str = "/static/img/avatar.webm";
 const DEVELOPER_NAME: &str = "Shagabutdinov David";
 
 #[function_component]
