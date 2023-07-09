@@ -3,9 +3,9 @@ pub mod backend_answers;
 
 use gloo_net::http::Request;
 use yew::prelude::*;
-use crate::{components::{Accordion, Work, Game}, backend_answers::{AccordionElement, ProjectElement}};
+use crate::{components::{Accordion, Work}, backend_answers::{AccordionElement, ProjectElement}};
 
-const MAIN_IMAGE: &str = "http://localhost:3000/images/avatar.webm";
+const MAIN_IMAGE: &str = "/static/avatar.webm";
 const DEVELOPER_NAME: &str = "Shagabutdinov David";
 
 #[function_component]
@@ -83,9 +83,9 @@ fn App() -> Html {
                 </div>
             </div>
         </div>
-        <div class="game-block">
-            <Game />
-        </div>
+        // <div class="game-block">
+        //     <Game />
+        // </div>
         </>
     }
 }
