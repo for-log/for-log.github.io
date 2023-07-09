@@ -1,0 +1,22 @@
+[package]
+name = "frontend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+yew = { version = "0.20.0", features = ["csr"] }
+web-sys = { version = "0.3.64", features = [
+    "HtmlElement",
+    'CanvasRenderingContext2d',
+    'Document',
+    'Element',
+    'HtmlCanvasElement',
+    'Window',
+] }
+gloo-net = "0.3.0"
+wasm-bindgen-futures = "0.4.37"
+wasm-bindgen = "0.2.87"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.99"
