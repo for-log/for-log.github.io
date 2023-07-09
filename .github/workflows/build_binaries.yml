@@ -11,7 +11,7 @@ jobs:
     name: release windows msvc  
     runs-on: windows-latest  
     steps:  
-      - uses: actions/checkout@main  
+      - uses: actions/checkout@master  
       - name: Build  
         run: |  
           cargo build --release  
