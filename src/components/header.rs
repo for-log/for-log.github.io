@@ -40,7 +40,7 @@ pub fn Header(cx: Scope) -> impl IntoView {
 
             set_active_menu.set(path);
         }) as Box<dyn FnMut(_)>);
-        let _ = window_element.add_event_listener_with_callback("scroll", &callback.as_ref().unchecked_ref());
+        let _ = window_element.add_event_listener_with_callback("scroll", callback.as_ref().unchecked_ref());
         callback.forget();
     });
     view! {cx, 
