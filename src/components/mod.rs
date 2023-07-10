@@ -1,8 +1,9 @@
-mod accordion;
-mod work;
-mod game;
+mod header;
+mod home;
+mod about;
+mod works;
 
-
-pub use accordion::Accordion;
-pub use work::Work;
-pub use game::Game;
+pub use header::Header;
+pub use home::Home;
+pub use about::About;
+pub use works::Works;
