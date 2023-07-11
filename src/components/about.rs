@@ -7,7 +7,7 @@ const ABOUT_ITEMS: &[(&str, &[&str], &str)] = &[
     ], "/static/img/img4.png"),
     ("Education", &["Perm State University, Applied Mathematics & Informatics [2022-2026]"], "/static/img/img1.png"),
     ("Languages", &["Russian (C2)", "English (B1-B2)"], "/static/img/img2.png"),
-    ("Contacts", &["shagabutdinov.david@yandex.ru", "Telegram: @ForderXS"], "/static/img/img3.png"),
+    ("Contacts", &["Email: shagabutdinov.david@yandex.ru", "Telegram: @ForderXS"], "/static/img/img3.png"),
 ];
 
 #[component]
