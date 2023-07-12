@@ -5,6 +5,7 @@ use crate::particle::Particle;
 
 
 pub const CANVAS_FONT_SIZE: f64 = 20.0;
+// type RenderFunction = Rc<RefCell<Option<Closure<dyn FnMut()>>>>;
 
 
 fn request_animation_frame(f: &Closure<dyn FnMut()>) {
@@ -18,7 +19,7 @@ fn request_animation_frame(f: &Closure<dyn FnMut()>) {
 pub fn Canvas(cx: Scope) -> impl IntoView {
     let canvas_ref = create_node_ref(cx);
 
-    let function: Rc<RefCell<Option<Closure<dyn FnMut()>>>> = Rc::new(RefCell::new(None));
+    let function = Rc::new(RefCell::new(None));
     let function_cloned = function.clone();
 
     let _window = window();
