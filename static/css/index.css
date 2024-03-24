@@ -239,6 +239,7 @@ body .works-frame .works .work > div {
 body .works-frame .works .work > div img {
     width: 100%;
     border-radius: 10px;
+    height: 60vh;
 }
 
 
