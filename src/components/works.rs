@@ -1,12 +1,30 @@
 use leptos::*;
 
-const WORKS: &[(&str, &[&str], &str, &str)] = &[
-    ("Portfolio", &["Rust (WASM)", "HTML", "CSS", "GIT"], "/static/img/portfolio.png", "#"),
+struct Work<T: AsRef<str>, K: AsRef<[T]>> {
+    title: T,
+    stack: K,
+    img: T,
+    link: T
+}
+
+const WORKS: &[Work<&str, &[&str]>] = &[
+    Work {
+        title: "Portfolio", 
+        stack: &["Rust (WASM)", "HTML", "CSS", "GIT"], 
+        img: "/static/img/portfolio.png", 
+        link: "#"
+    },
+    Work {
+        title: "ERP System", 
+        stack: &["Python (FLASK)", "HTML", "CSS", "GIT", "SQL", "JAVASCRIPT (VUE3)"], 
+        img: "/static/img/nda.jpg", 
+        link: "#"
+    },
 ];
 
 
 fn zero_fill_string(count: usize, value: String) -> String {
-    vec!["0"; count - value.len()].into_iter().collect::<String>() + &value
+    "0".repeat(count - value.len()) + &value
 }
 
 
@@ -17,18 +35,18 @@ pub fn Works(cx: Scope) -> impl IntoView {
             <h1>Works</h1>
             <div class="works">
             {
-                WORKS.iter().enumerate().map(|(i, (title, stack, img, link))| view! { cx,
-                    <a href={*link} class="work">
+                WORKS.iter().enumerate().map(|(i, work)| view! { cx,
+                    <a href={work.link} class="work">
                         <span>
                             <p>{zero_fill_string(WORKS.len().to_string().len() + 1, (i + 1).to_string())}</p>
-                            <p>{*title}</p>
+                            <p>{work.title}</p>
                         </span>
                         <div>
-                            <img src={*img} />
+                            <img src={work.img} />
                             <h2>Stack</h2>
                             <ul>
                             {
-                                stack.iter().map(|item| view! {cx, 
+                                work.stack.iter().map(|item| view! {cx, 
                                     <li>{*item}</li>
                                 }).collect_view(cx)
                             }

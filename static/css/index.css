@@ -59,17 +59,19 @@ body > * > h1 {
 
 body header {
     padding: 1vw 4vw;
+    /* margin: 1vh 1vw; */
     top: 0;
     left: 0;
-    position: fixed;
+    position:fixed;
     justify-content: space-between;
     align-items: center;
     transition: 0.3s;
+    /* border-radius: 30px; */
 }
 
 
 body header.active {
-    background: var(--body-background-color);
+    background: var(--primary-color);
 }
 
 
@@ -93,7 +95,7 @@ body header ul li {
 
 
 body header ul li:hover {
-    color: var(--primary-color);
+    color: #ffffff;
 }
 
 
@@ -139,6 +141,10 @@ body .about-frame .item {
 @media (orientation: landscape) {
     body .about-frame .item:nth-child(odd) {
         flex-direction: row-reverse;
+    }
+
+    
+    body .about-frame .item:nth-child(odd) .info ul {
         text-align: end;
     }
 }
@@ -156,20 +162,28 @@ body .about-frame .item h3 {
 }
 
 
-body .about-frame .item ul {
+body .about-frame .item .info {
+    background: var(--primary-color);
+    height: fit-content;
+    border-radius: 30px;
+    width: 100%;
+}
+
+
+body .about-frame .item .info ul {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     column-gap: 4vh;
-    width: 100%;
     height: 15vh;
-    /* padding: 3vh; */
+    width: fit-content;
+    padding-left: 2vw;
 }
 
 
 body .about-frame .item li {
     font-size: 2vh;
-    color: var(--primary-color);
+    color: #ffffff;
 }
 
 

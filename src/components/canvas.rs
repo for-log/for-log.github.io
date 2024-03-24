@@ -5,7 +5,6 @@ use crate::particle::Particle;
 
 
 pub const CANVAS_FONT_SIZE: f64 = 20.0;
-// type RenderFunction = Rc<RefCell<Option<Closure<dyn FnMut()>>>>;
 
 
 fn request_animation_frame(f: &Closure<dyn FnMut()>) {
